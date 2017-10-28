@@ -1,7 +1,7 @@
 /* Universal Styles */
 
 html {
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-size: 100%;
   font: inherit;
@@ -55,21 +55,51 @@ header span {
   height: 2.5rem;
 }
 
-nav {
+.desknav {
   font-size: 1.25rem;
   padding-right: 1.5rem;
 }
 
-nav ul {
+.desknav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-nav ul li {
+.desknav li {
   padding-left: 1rem;
   list-style-type: none;
 }
+
+.desknav li:hover {
+  color: darkgray;
+  transition:  background-color 50ms ease-in-out,
+    color 100ms linear;
+}
+
+.mobnav {
+  display: none;
+}
+
+/* Mobile responsiveness - Header */
+
+@media screen and (max-width: 700px) {
+  .desknav ,.logo{
+    display: none;
+  }
+  .mobnav {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+  nav,nav ul li {
+    padding: 0;
+  }
+  nav {
+    width: 100%;
+  }
+}
+
 
 /* Banner Section */
 
@@ -95,18 +125,59 @@ nav ul li {
   padding-left: 1.5rem;
 }
 
-.bannertext h3 {
-  font-size: 1.5rem;
-  padding: 1.5rem 0;
+.bannertext h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
 }
 
-.button {
+.bannertext p {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.bannertext .button {
   background-color: #778899;
   color: white;
-  padding: 0.5rem 6rem;
   font-size: 1.5rem;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  padding: 1rem 8rem 1rem;
+  display: block;
+  min-width: 30%;
 }
 
+.bannertext .button:hover {
+  background-color: blue;
+  transition: background-color 50ms ease-in-out,
+    color 100ms linear;
+}
+
+
+/* Mobile responsiveness - Banner */
+
+@media screen and (max-width: 1200px) {
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0 0 0;
+  }
+  .bannerpic, .bannertext {
+    max-width: 100%;
+  }
+  .banner .button {
+    max-width: 100%;
+  }
+  .banner-text {
+    padding: 2rem 1rem;
+    max-width: 100%;
+  }
+  .banner-text h2 {
+    padding:2rem 0 1.5rem 0;
+  }
+}
 
 /* Information Section */
 
@@ -149,6 +220,7 @@ nav ul li {
 
 .infoarticle {
   display: flex;
+  justify-content: flex-start;
   padding: 1rem;
   border-color: lightgray;
 }
@@ -165,6 +237,29 @@ nav ul li {
   flex-direction: column;
   line-height: 1.3;
 }
+
+.infoarticle:hover {
+  background-color: lightgray;
+  transition: background-color 50ms ease-in-out,
+    color 100ms linear;
+}
+
+/* Mobile responsiveness - Information */
+@media screen and (max-width: 1090px) {
+  .infopic h1 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 890px) {
+  .infopic {
+    display: none;
+  }
+  .infotext {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 
 
 /* Courses Section */
@@ -214,6 +309,69 @@ nav ul li {
 .coursetext p {
   line-height: 1.5;
   padding-bottom: 2rem;
+}
+
+/* Mobile responsiveness - Courses */
+@media screen and (max-width: 1300px) {
+  .coursetext h4 {
+    display: none;
+  }
+  .coursetext {
+    height: 3.5rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .coursesection {
+    background-color: inherit;
+    border-top: 1px solid gray;
+    padding: 0rem 0rem;
+  }
+  .courseheader h1{
+    padding-bottom: 1rem;
+  }
+  .courses {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .course {
+    max-width: 100%;
+    width: 100%;
+    margin: .5rem 0;
+    background-color: darkgray;
+    color: white;
+  }
+  .course img{
+    display: none;
+  }
+  .coursetext h4,
+  .coursetext p {
+    display: none;
+  }
+}
+@media screen and (max-width: 695px) {
+  .infoarticle img.infodesk {
+    display: none;
+  }
+  .info img.infomob {
+    display: block;
+  }
+  .infocontainer {
+    margin-top: 0;
+  }
+  .infotext {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .infotext img {
+    max-width: 100%;
+    width: 100%;
+  }
+  .articletext {
+    padding-top: 2rem;
+    padding-left: 1rem;
+  }
 }
 
 /* Thesis Section */
@@ -278,6 +436,27 @@ video {
   padding: 0 0 1rem 1rem;
 }
 
+/* Mobile responsiveness - Thesis */
+@media screen and (max-width: 995px) {
+  .thesis {
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid gray;
+  }
+  .thesisvideo {
+    width: 100%;
+  }
+  .thesissidebar {
+    display: none;
+  }
+  .thesisvideo h2 {
+    padding-bottom: 0rem;
+  }
+  .thesisvideo p {
+    display: none;
+  }
+}
 
 /* Footer */
 
